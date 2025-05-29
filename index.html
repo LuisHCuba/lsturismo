@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposta LHCX.tech - LS Turismo e Eventos</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background-color: #f8fafc;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .proposal-info {
+            background: white;
+            margin: -30px auto 40px;
+            max-width: 800px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            padding: 40px;
+            position: relative;
+        }
+
+        .proposal-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .proposal-title {
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .proposal-date {
+            color: #64748b;
+            font-size: 1rem;
+        }
+
+        .client-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .client-info, .project-info {
+            padding: 25px;
+            background: #f8fafc;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .info-item:last-child {
+            border-bottom: none;
+        }
+
+        .info-label {
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        .info-value {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .urgency-banner {
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 30px 0;
+            font-weight: 600;
+        }
+
+        .packages-section {
+            margin: 60px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .packages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 30px;
+        }
+
+        .package {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            padding: 40px;
+            position: relative;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .package:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .package.featured {
+            border-color: #667eea;
+            transform: scale(1.02);
+        }
+
+        .package-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #667eea;
+            color: white;
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .package-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .package-name {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .package-price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+
+        .package-description {
+            color: #64748b;
+            font-size: 1rem;
+        }
+
+        .features-list {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .features-list li {
+            padding: 12px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .features-list li:last-child {
+            border-bottom: none;
+        }
+
+        .feature-icon {
+            color: #10b981;
+            font-size: 1.1rem;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        .feature-text {
+            color: #374151;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .feature-highlight {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .cta-button {
+            width: 100%;
+            padding: 16px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .cta-button:hover {
+            background: #5a67d8;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .methodology {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            padding: 50px;
+            margin: 60px 0;
+        }
+
+        .methodology h3 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .timeline {
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #e2e8f0;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 80px;
+            margin-bottom: 40px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-icon {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 60px;
+            height: 60px;
+            background: #667eea;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .timeline-content h4 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        .timeline-content p {
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .guarantees {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 50px;
+            border-radius: 12px;
+            margin: 60px 0;
+            text-align: center;
+        }
+
+        .guarantees h3 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .guarantee-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .guarantee-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+
+        .guarantee-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .contact-section {
+            background: #2c3e50;
+            color: white;
+            padding: 50px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .contact-section h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            .packages {
+                grid-template-columns: 1fr;
+            }
+            
+            .package.featured {
+                transform: none;
+            }
+            
+            .timeline::before {
+                left: 15px;
+            }
+            
+            .timeline-item {
+                padding-left: 60px;
+            }
+            
+            .timeline-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="logo">LHCX.tech</div>
+            <div class="tagline">Dashboards, Automações e Aplicativos Personalizados</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="proposal-info">
+            <div class="proposal-header">
+                <h1 class="proposal-title">Proposta Comercial</h1>
+                <p class="proposal-date">Projeto: LS Turismo e Eventos | Válida até: 05/06/2025</p>
+            </div>
+
+            <div class="client-section">
+                <div class="client-info">
+                    <div class="section-title">
+                        <i class="fas fa-user"></i>
+                        Informações do Cliente
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Cliente:</span>
+                        <span class="info-value">Lucas Souza</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Empresa:</span>
+                        <span class="info-value">LS Turismo e Eventos</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">E-mail:</span>
+                        <span class="info-value">lsturismoee@gmail.com</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Telefone:</span>
+                        <span class="info-value">(19) 99559-5330</span>
+                    </div>
+                </div>
+
+                <div class="project-info">
+                    <div class="section-title">
+                        <i class="fas fa-project-diagram"></i>
+                        Detalhes do Projeto
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Objetivo:</span>
+                        <span class="info-value">Plataforma de Vendas</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Setor:</span>
+                        <span class="info-value">Turismo e Eventos</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Prazo:</span>
+                        <span class="info-value">15 dias</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Status:</span>
+                        <span class="info-value">Urgente</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="urgency-banner">
+                <i class="fas fa-clock"></i>
+                PROJETO URGENTE: Desconto especial de 15% aplicado em todos os pacotes
+            </div>
+        </div>
+
+        <div class="packages-section">
+            <div class="section-header">
+                <h2>Soluções Sob Medida</h2>
+                <p class="section-subtitle">
+                    Desenvolvemos a tecnologia certa para transformar seus desafios em oportunidades de crescimento
+                </p>
+            </div>
+
+            <div class="packages">
+                <!-- PACOTE STARTER -->
+                <div class="package">
+                    <div class="package-header">
+                        <h3 class="package-name">STARTER</h3>
+                        <div class="package-price">R$ 1.297</div>
+                        <p class="package-description">Solução inicial para começar</p>
+                    </div>
+                    <ul class="features-list">
+                        <li>
+                            <i class="fas fa-check feature-icon"></i>
+                            <span class="feature-text">Site responsivo com <span class="feature-highlight">5 páginas otimizadas</span></span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check feature-icon"></i>
+                            <span class="feature-text">Catálogo de <span class="feature-highlight">passeios e eventos</span></span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check feature-icon"></i>
+                            <span class="feature-text">Sistema de <span class="feature-highlight">reservas online</span></span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check feature-icon"></i>
+                            <span class="feature-text">Pagamentos integrados (PIX, Cartões)</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check feature-icon"></i>
+                            <span class="feature-text">Formulário de contato avançado</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check feature-icon"></i>
+                            <span class="feature-text">Integração WhatsApp Business</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check feature-icon"></i>
+                            <span class="feature-text">SSL e hospedagem (6 meses inclusos)</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check feature-icon"></i>
+                            <span class="feature-text">Otimização SEO básica</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check feature-icon"></i>
+                            <span class="feature-text">Suporte técnico (30 dias)</span>
+                        </li>
+                    </ul>
+                    <button class="cta-button">Escolher Starter</button>
+                </div>
+
+                <!-- PACOTE PROFESSIONAL -->
+                <div class="package featured">
+                    <div class="package-badge">Recomendado</div>
+                    <div class="package-header">
+                        <h3 class="package-name">PROFESSIONAL</h3>
+                        <div class="package-price">R$ 1.897</div>
+                        <p class="package-description">Solução completa e otimizada</p>
+                    </div>
+                    <ul class="features-list">
+                        <li>
+                            <i class="fas fa-check feature-icon"></i>
+                            <span class="feature-text"><span class="feature-highlight">Tudo do Starter +</span></span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check feature-icon"></i>
+                            <span class="feature-text">Catálogo completo de <span class="feature-highlight">destinos e experiências</span></span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check feature-icon"></i>
+                            <span class="feature-text">Sistema de agendamento online</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check feature-icon"></i>
+                            <span class="feature-text">Área do cliente personalizada</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check feature-icon"></i>
+                            <span class="feature-text">Galeria de fotos otimizada</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check feature-icon"></i>
+                            <span class="feature-text">Dashboard de vendas em tempo real</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check feature-icon"></i>
+                            <span class="feature-text">Chat online integrado</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check feature-icon"></i>
+                            <span class="feature-text">Relatórios automatizados</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check feature-icon"></i>
+                            <span class="feature-text">Integração redes sociais</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check feature-icon"></i>
+                            <span class="feature-text">Suporte técnico (90 dias)</span>
+                        </li>
+                    </ul>
+                    <button class="cta-button">Escolher Professional</button>
+                </div>
+
+                <!-- PACOTE ENTERPRISE -->
+                <div class="package">
+                    <div class="package-header">
+                        <h3 class="package-name">ENTERPRISE</h3>
+                        <div class="package-price">R$ 2.697</div>
+                        <p class="package-description">Tecnologia avançada e automações</p>
+                    </div>
+                    <ul class="features-list">
+                        <li>
+                            <i class="fas fa-check feature-icon"></i>
+                            <span class="feature-text"><span class="feature-highlight">Tudo do Professional +</span></span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check feature-icon"></i>
+                            <span class="feature-text">Aplicativo móvel personalizado</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check feature-icon"></i>
+                            <span class="feature-text">Automações de marketing (e-mail, SMS)</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check feature-icon"></i>
+                            <span class="feature-text">Sistema de fidelidade avançado</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check feature-icon"></i>
+                            <span class="feature-text">Dashboard executivo com KPIs</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check feature-icon"></i>
+                            <span class="feature-text">Integração com ERPs externos</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check feature-icon"></i>
+                            <span class="feature-text">Multi-idiomas (PT/EN/ES)</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check feature-icon"></i>
+                            <span class="feature-text">Backup automático diário</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check feature-icon"></i>
+                            <span class="feature-text">Hospedagem premium (12 meses)</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check feature-icon"></i>
+                            <span class="feature-text">Suporte priority (6 meses)</span>
+                        </li>
+                    </ul>
+                    <button class="cta-button">Escolher Enterprise</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="methodology">
+            <h3>Metodologia de Desenvolvimento</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-icon">01</div>
+                    <div class="timeline-content">
+                        <h4>Análise e Planejamento</h4>
+                        <p>Briefing detalhado, definição de requisitos técnicos, wireframes e aprovação da arquitetura da informação.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon">02</div>
+                    <div class="timeline-content">
+                        <h4>Design e Prototipagem</h4>
+                        <p>Criação da identidade visual, layouts responsivos e protótipos interativos para validação.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon">03</div>
+                    <div class="timeline-content">
+                        <h4>Desenvolvimento</h4>
+                        <p>Codificação do front-end e back-end, integração de APIs, desenvolvimento da loja virtual e funcionalidades.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon">04</div>
+                    <div class="timeline-content">
+                        <h4>Testes e Homologação</h4>
+                        <p>Testes de usabilidade, performance, segurança e compatibilidade em diferentes dispositivos.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon">05</div>
+                    <div class="timeline-content">
+                        <h4>Deploy e Treinamento</h4>
+                        <p>Publicação em produção, configuração de domínio, treinamento da equipe e documentação técnica.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="guarantees">
+            <h3>Nossos Compromissos</h3>
+            <div class="guarantee-items">
+                <div class="guarantee-item">
+                    <h4><i class="fas fa-clock"></i> Prazo Garantido</h4>
+                    <p>Entrega em até 15 dias ou reembolso integral do valor investido.</p>
+                </div>
+                <div class="guarantee-item">
+                    <h4><i class="fas fa-thumbs-up"></i> Satisfação Total</h4>
+                    <p>30 dias para revisões e ajustes sem custo adicional após a entrega.</p>
+                </div>
+                <div class="guarantee-item">
+                    <h4><i class="fas fa-shield-alt"></i> Qualidade Técnica</h4>
+                    <p>Código limpo, documentado e seguindo as melhores práticas de desenvolvimento.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-section">
+            <h3>Próximos Passos</h3>
+            <p>Entre em contato conosco para iniciarmos o desenvolvimento da sua solução tecnológica.</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>adm@luiscuba.tech</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>(19) 98162-1022</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>WhatsApp</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
